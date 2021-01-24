@@ -1,8 +1,8 @@
 # Compact and Minimal Resume Template
 
-This CV(Resume) template is compact, minimal, easy to modify and beautiful the same time. This template is created according to the job requirements of engineers. See [example](example.pdf) below.
+This CV(Resume) template is compact, minimal, easy to modify and beautiful the same time. This template is created according to the job requirements of engineers. See [My Resume](resume.pdf) below.
 
-<img src="example.png" align=center alt="Example CV">
+<img src="resume.png" align=center alt="Example CV">
 
 ## How to use this template ?
 
