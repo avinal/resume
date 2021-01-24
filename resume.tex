@@ -1,11 +1,11 @@
 %!TEX TS-program = xelatex
-\documentclass[a4paper]{comcv}
+\documentclass[a4paper, extended]{comcv}
 
 \usepackage[english]{babel}
 
 \title{Avinal's CV}
-\fullname{Avinal}{}{Kumar}
-\cvtitle{Student, Programmer, Technical Writer, Open Source Developer}
+\fullname{Avinal}{Kumar}{}
+% \cvtitle{Student, Programmer, Technical Writer, Open Source Developer}
 \website{https://avinal.is-a.dev}{avinal.is-a.dev}
 \email{185067@nith.ac.in}
 \github{https://github.com/avinal}{GitHub}
@@ -13,7 +13,79 @@
 \currentdate{Jan 2021}
 
 \begin{document}
-    \section{Experience}
-    \subsection{Script Winter of Code}
-    
+\section{Experience}
+\combosection{Script Winter of Code}{Participant \href{https://github.com/harshcasper/rotten-scripts}{Rotten-Scripts}}{Dec 2020-Present}{
+  \begin{tightlist}
+    \item Proposed new sections for PowerShell Scripts
+    \item Proposed and created structure of website for the project
+    \item Added Automatic Pull Request Assigning Action
+  \end{tightlist}
+}
+
+\combosection{Google Season of Docs 2020}{Technical Writer, VideoLAN}{Sep 2020-Nov 2020}{
+  \begin{tightlist}
+    \item Created \href{https://code.videolan.org/docs/vlc-android-user}{VLC for Android User Documentation}
+    \item Proposed a new structure for the documentation (Sphinx, reStructuredText)
+    \item Writing user-friendly and well researched content for technical and non-technical users.
+    \item Proper amount and placement of screenshots and other media for appealing and informative docs.
+    \item Optimized webpages for major form factors and ease of navigation
+  \end{tightlist}
+}
+
+\section{Projects}
+\combosection{\href{https://github.com/avinal/Profile-Readme-Wakatime}{Automated Coding Activity GitHub Action}}{Python, Docker, GitHub Actions, Bash Scripting}{}{
+  \begin{tightlist}
+    \item Automatically generates WakaTime Coding Activity graph that can be embedded in Readme(s) and websites.
+    \item Uses WakaTime API to gather coding activity of last seven days as JSON.
+    \item The data is then processes and converted to a SVG graph using matplotlib
+  \end{tightlist}
+}
+
+\combosection{\href{https://github.com/avinal/Binary-Search-Tree-Travarsal}{Binary Search Tree Traversal Animator}}{Java, Gradle, Swing, Multi-threading}{}{
+  \begin{tightlist}
+    \item Creates Binary Search Tree node-by-node and draws the path taken by the traversals.
+    \item Visualizes Inorder, Preorder, Postorder and Levelorder using multi-threading and recursion.
+  \end{tightlist}
+}
+
+\combosection{\href{https://github.com/avinal/FITS-Image}{Astronomical Image Extraction from FITS File}}{C++, CFITSIO, Boost.GIL, CMake}{}{Flexible Image Transport System has been used for decades to store and transfer astronomical images and needs specialized software to view them, this project extract those images as JPEG or PNG that can be viewed by common image viewer.}
+\vspace{\topsep}
+\combosection{Open Source Contributions}{\href{https://github.com/avinal}{GitHub}, \href{https://code.videolan.org/avinal}{GitLab}}{}{Contributed to organizations: GitHub, Jupyter-XEUS, JetBrains, Embox, VideoLAN}
+
+\vspace{\topsep}
+\section{Skills}
+\combosection{Programming}{}{}{
+  \begin{tightlist}
+    \item Data Structures and Algorithms
+    \item C/C++ (2+ years) - STL, Pointers, Templates, OOP, API development, Boost C++, Qt(basic)
+    \item Java (1+ years) - Collections, Generic Programming, Basic Multi-threading
+    \item Basic - SQL, MATLAB, HTML, CSS, JavaScript, Python
+  \end{tightlist}
+}
+
+\combosection{Tools/Others}{}{}{
+  \begin{tightlist}
+    \item Scripting(Bash, Python), git, GitHub Actions, CI/CD, Linux/Unix, Windows, Windows Subsystem for Linux
+    \item \LaTeX, Visual Studio Code, CLion, IntelliJ IDEA, Vim, Visual Studio, Word, Powerpoint, Excel
+  \end{tightlist}
+}
+
+\section{Education}
+\combosection{National Institute of Technology, Hamirpur}{B.Tech in Computer Sci. and Eng.}{2018-Present}{
+  \ifextended
+    Courses - Advanced Calculus, Statistics, Probability and Queuing Theory, Algorithm Design, Digital Logic Design, Database Management Systems, Data Structures, Operating Systems, Compiler Design, Computer Networks
+  \else
+  \fi
+}
+
+\vspace{\topsep}
+\combosection{The Coding School}{Quantum Computing}{Oct 2020-Present}{
+    Basic Quantum Mechanics and Quantum Computing
+}
+
+\vspace{\topsep}
+
+\section{Certifications}
+\combosection{Google IT Support Professional}{Coursera}{2020}{Computer Network, System Administration, Operating Stystem, Cyber Security}
+
 \end{document}
