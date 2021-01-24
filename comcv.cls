@@ -129,7 +129,7 @@
 }{}{0pt}{}
 
 % new command for writing subsection and descriptions
-\newcommand*{\combosection}[4]{
+\newcommand{\combosection}[4]{
     \subsection{\textbf{#1}}
     \ifx&#2&
     \else
