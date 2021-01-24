@@ -4,7 +4,7 @@
 % Based on Adaptive CV by Alessandro Rossini
 
 % class options 
-\NeedsTexFormat{LaTeX2e}
+\NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{comcv}[2021/01/21 Compact CV]
 
 \DeclareOption*{
@@ -14,14 +14,15 @@
 \LoadClass{article}
 
 % required packages - put more packages here
-\RequirePackage[hmargin=1.25cm, vmargin=0.75cm]{geometry} % Change Horizontal and Vertical margins
+\RequirePackage[top=2cm,left=1cm,right=1cm,bottom=1.2cm]{geometry} % Change Horizontal and Vertical margins
 \RequirePackage{fontawesome} % fontawesomr icons
-\RequirePackages{xcolor} % custom colors
+\RequirePackage{xcolor} % custom colors
 \RequirePackage{hyperref} % for links and 
 \RequirePackage{fontspec} % custom fonts
 \RequirePackage{array}
 \RequirePackage{totpages} % counts total pages
-\RequirePackage{fancyhdr} 
+\RequirePackage{fancyhdr}
+\RequirePackage{tikz}
 
 % define your colors here
 \definecolor{white}{HTML}{FFFFFF} % color white
@@ -29,7 +30,7 @@
 \definecolor{gray}{HTML}{555555} % color gray
 \definecolor{paynegray}{HTML}{353E49} % color payne gray
 \definecolor{black}{HTML}{000000} % color black
-\definecolor{colorpink}{HTML}{FF706C} % color coral pink, ever seen a real coral, huh 
+\definecolor{coralpink}{HTML}{FF706C} % color coral pink, ever seen a real coral, huh 
 
 % provide colors to your elements
 \colorlet{regulartext}{gray}
@@ -40,14 +41,12 @@
 
 % hyperref options for generating pdf, metadata
 \hypersetup{
-    pdfauthor={\comcv@firstname~\adcv@lastname}, % author of the file
-    pdftitle={\comcv@firstname~\adcv@lastname}, % title for the generated pdf
     pdfsubject={Resume},
     pdfpagemode=UseOutlines,
     bookmarksopen=true,
     pdfstartview=Fit,
     colorlinks=true,
-    allcolors=linktext
+    allcolors=linktext, 
 }
 
 % font options
@@ -85,7 +84,7 @@
 ]{Roboto-Thin.ttf}
 
 % define document commands/variables
-\newcommand*{\fullname}[3]{\def\comcv@firstname{#1}\def\cpmcv@middlename{#2}\def\comcv@lastname{#3}} % full name
+\newcommand*{\fullname}[3]{\def\comcv@firstname{#1}\def\comcv@middlename{#2}\def\comcv@lastname{#3}} % full name
 \newcommand*{\cvtitle}[1]{\def\comcv@title{#1}} % title of the document
 \newcommand*{\email}[1]{\def\comcv@mailid{#1}} % email id and email text
 \def\comcv@email{\faEnvelop~\href{mailto:\comcv@mailid}{\comcv@mailid}}
@@ -122,6 +121,10 @@
 \else
     \def\comcv@linkedin{}
 \fi
+
+\newcommand*{\currentdate}[1]{\def\comcv@date{#1}}
+\def\comcv@totpages{~/~\ref{TotPages}}
+\def\comcv@page{\comcv@pagekey~\thepage\comcv@totpages}
 % add more variables here
 
 % redefining some commands
@@ -131,6 +134,14 @@
 
 \renewcommand{\subsection}[2]{\large\bfseries #2}
 
+% hyperref options
+\AtBeginDocument{
+    \hypersetup{
+        pdfauthor={\comcv@firstname~\comcv@lastname}, % author of the file
+        pdftitle={\comcv@firstname~\comcv@lastname}, % title for the generated pdf
+    }
+}
+
 % header
 \AtBeginDocument{
     \begin{tikzpicture}[remember picture, overlay]
@@ -139,19 +150,17 @@
         };
         \node [text=headertext, anchor=north] at (name.south) {\Large\thinheader\comcv@title};
     \end{tikzpicture}
+
+
+    \vspace{\baselineskip}
+
+    \begin{center}
+        \comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin
+    \end{center}
 }
 
-\vspace{\baselineskip}
-
-\begin{center}
-    \comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin
-\end{center}
 
 % footer
-\newcommand*{\currentdate}[1]{\def\comcv@date{#1}}
-\def\comcv@totpages{~/~\ref{TotPages}}
-\def\comcv@page{\comcv@pagekey~\thepage\comcv@totpages}
-
 \AtBeginDocument{
     \pagestyle{fancy}
     \fancyhead{}
