@@ -21,14 +21,15 @@
 % required packages - put more packages here
 \RequirePackage[top=0.5cm,left=1cm,right=1cm,bottom=1.2cm]{geometry} % Change Horizontal and Vertical margins
 \RequirePackage{fontawesome} % fontawesome icons
-\RequirePackage{xcolor} % custom colors
+\RequirePackage[usenames,dvipsnames]{xcolor} % custom colors
 \RequirePackage{fontspec} % custom fonts
 \RequirePackage{array}
 \RequirePackage{totpages} % counts total pages
-\RequirePackage{fancyhdr}
-\RequirePackage{titlesec}
+\RequirePackage{fancyhdr} % fancy header, footer
+\RequirePackage{titlesec} % formating sections, subsections
 \RequirePackage{hyperref} % for links and, please keep it as last package, add more packages above it
-
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{naturalnames}{hyperref}
 % define your colors here
 \definecolor{white}{HTML}{FFFFFF} % color white
 \definecolor{gray}{HTML}{555555} % color gray
@@ -88,12 +89,6 @@
     Color=headertext
 ]{Roboto-Medium.ttf}
 
-\newfontfamily\sectionheader[
-    Path = fonts/,
-    Color=linktext
-]{Roboto-Regular.ttf}
-
-
 % define document commands/variables
 \newcommand*{\fullname}[3]{\def\comcv@firstname{#1}\def\comcv@lastname{#2}\def\comcv@degree{#3}} % full name and degree
 
@@ -112,25 +107,30 @@
 % link colors
 \def\HyColor@@@@UseColor#1\@nil{\addfontfeatures{Color=linktext}}
 
-
 % redefining some commands
 \titlespacing{\section}{0pt}{0pt}{0pt} % remove space around sections
 \titleformat{\section}{
-    \fontsize{16pt}{24pt}\sectionheader\bfseries
+    \fontsize{14pt}{16pt}\thinheader\bfseries\uppercase 
 }{}{0pt}{}
+
+
 
 \titlespacing{\subsection}{0pt}{0pt}{0pt} % remove space around subsection
 \titleformat{\subsection}[runin]{ % runin option let you put text side of section or subsection
-    \fontsize{12pt}{20pt}\mediumheader\bfseries
+    \fontsize{12pt}{12pt}\mediumheader\bfseries
 }{}{0pt}{}
 
 % new command for writing subsection and descriptions
 \newcommand*{\combosection}[4]{
     \subsection{\textbf{#1}}
-    \sectionheader\Large{~|}
-    \light\large{~#2}
+    \ifx&#2&
+    \else
+    \Large\addfontfeatures{Color=linktext}{~|}
+    \light\large{#2}
+    \fi
     \hfill{#3}
-    \linebreak{#4}
+    \linebreak
+    \normalsize{#4}
 }
 
 % header
@@ -184,22 +184,22 @@
         \ifdefined\comcv@title
         \ifx\comcv@title\empty
             \large\light\comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin
-            \vspace{-2mm}
+            \vspace{-\topsep}
             \horbar
-            \vspace{-5mm}
+            \vspace{-\topsep}
         \else
             \large\light\comcv@title
-            \vspace{-2mm}
+            \vspace{-\topsep}
             \horbar
 
             \comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin
-            \vspace{-4mm}
+            \vspace{-\topsep}
         \fi
         \else
             \large\light\comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin
-            \vspace{-2mm}
+            \vspace{-\topsep}
             \horbar
-            \vspace{-5mm}
+            \vspace{-\topsep}
         \fi
     
     \end{center}
@@ -217,4 +217,14 @@
     \fancyfoot[R]{\raggedleft\footnotesize\comcv@page} % page number and page link
     \renewcommand{\headrulewidth}{0em}
     \setlength\footskip{\baselineskip}
+}
+
+\newenvironment{tightlist}{
+    \vspace{-6mm}
+    \begin{itemize}
+        \itemsep1pt
+        \parskip0pt
+        \parsep0pt
+}{
+    \end{itemize}
 }
