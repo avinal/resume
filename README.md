@@ -1,6 +1,6 @@
 # Compact and Minimal Resume Template
 
-This CV(Resume) template is compact, minimal, easy to modify and beautiful the same time. This template is created according to the job requirements of engineers. See [My Resume](resume.tex) below.
+This CV(Resume) template is compact, minimal, easy to modify and beautiful. See [My Resume](resume.tex) below.
 
 <img src="resume.png" align=center alt="Example CV">
 
@@ -43,6 +43,12 @@ There are a lots of custom commands and environments to make this resume templat
 
     ```tex
         \github{https://www.linkedin.com/in/username}{LinkedIn Text}
+    ```
+
+- Phone *(Optional)*
+
+    ```tex
+        \phonenumber{0123456789}
     ```
 
 - Current Date(any format) *(required)*
@@ -90,7 +96,7 @@ There are a lots of custom commands and environments to make this resume templat
     ```
 
 ## Requirement(s)
-You must compile this resume with `XeTeX`, `XeLaTex`, `LuaTeX` or `LuaLaTeX`. *(pdfLaTex is incompatible with fontawesome)*
+You must compile this resume with `XeLaTex` or `LuaLaTeX` *(pdfLaTex is incompatible with fontawesome)*. While using Overleaf choose `Compiler` from the menu.
 
 This resume template uses following extra packages:-
 - [fontawesome](https://ctan.org/pkg/fontawesome) - For fontawesome icons
@@ -106,7 +112,7 @@ In addition to packages, [Roboto](https://fonts.google.com/specimen/Roboto) font
 
 ## License
 
-Copyright 2021 Avinal Kumar
+Copyright 2024 Avinal Kumar
 This work may be distributed and/or modified under the conditions of the [LaTeX Project Public License](https://www.latex-project.org/lppl/lppl-1-3c/), either version 1.3 of this license any later version.
 
 ## Acknowledgements

@@ -1,5 +1,5 @@
 %% comcv.cls
-%% Copyright 2021 Avinal Kumar
+%% Copyright 2024 Avinal Kumar
 %
 % This work may be distributed and/or modified under the
 % conditions of the LaTeX Project Public License, either version 1.3
@@ -110,6 +110,8 @@
 
 \newcommand*{\linkedin}[2]{\def\comcv@linkedinurl{#1}\def\comcv@linkedintext{#2}} % linkedin
 
+\newcommand*{\phonenumber}[1]{\def\comcv@phone{#1}} % phone number
+
 \newcommand\horbar[1][]{\noindent\makebox[\linewidth]{\color{gray}\rule{\paperwidth}{0.4pt}}} % unindented horizontal line
 
 % link colors
@@ -181,6 +183,16 @@
         \def\comcv@website{}
     \fi
 
+    \ifdefined\comcv@phone
+    \ifx\comcv@phone\empty
+        \def\comcv@phonenumber{}
+    \else
+        \def\comcv@phonenumber{\faPhone~\href{tel:\comcv@phone}{\comcv@phone}}
+    \fi
+    \else
+        \def\comcv@phonenumber{}
+    \fi
+
     \begin{center}
         % define your header text size, color and format
         \fontsize{35pt}{45pt}\thinheader\comcv@firstname~\regularheader\comcv@lastname
@@ -191,7 +203,7 @@
 
         \ifdefined\comcv@title
         \ifx\comcv@title\empty
-            \large\light\comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin
+            \large\light\comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin~~\comcv@phonenumber
             \vspace{-\topsep}
             \horbar
             \vspace{-\topsep}
@@ -200,11 +212,11 @@
             \vspace{-\topsep}
             \horbar
 
-            \comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin
+            \comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin~~\comcv@phonenumber
             \vspace{-\topsep}
         \fi
         \else
-            \large\light\comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin
+            \large\light\comcv@email~~\comcv@website~~\comcv@github~~\comcv@linkedin~~\comcv@phonenumber
             \vspace{-\topsep}
             \horbar
             \vspace{-\topsep}
