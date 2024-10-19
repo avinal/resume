@@ -1,33 +1,35 @@
 # Compact and Minimal Resume Template
 
-This CV(Resume) template is compact, minimal, easy to modify and beautiful. See [My Resume](resume.tex) below.
+This CV (Resume) template is compact, minimal, easy to modify and beautiful. See [My Resume](resume.tex) below.
 
 <img src="resume.png" align=center alt="Example CV">
 
-## How to use this template ?
 
-If you are new to LaTeX, use the [example.tex](example.tex) file to start with. 
+## How to use this template?
 
-There are a lots of custom commands and environments to make this resume template easy to use.
-- Name and Qualification (academic degree). *(required)*
+If you are new to LaTeX, start with the [example.tex](example.tex) file. 
+
+There are lots of custom commands and environments to make this resume template easy to use.
+
+- Name and Qualification (academic degree) *(Required)*
 
     ```tex
         \fullname{FirstName}{LastName}{Degree}
     ```
 
-- Resume Title - To be shown below the name *(optional)*
+- Resume Title - To be shown below the name *(Optional)*
 
     ```tex
         \cvtitle{Your Resume Title}
     ```
 
-- Email ID *(required)*
+- Email ID *(Required)*
 
     ```tex
         \email{email@example.com}
     ```
 
-- Website/Portfolio *(optional)*
+- Website/Portfolio *(Optional)*
 
     ```tex
         \website{https://www.example.com}{Website Text}
@@ -51,7 +53,7 @@ There are a lots of custom commands and environments to make this resume templat
         \phonenumber{0123456789}
     ```
 
-- Current Date(any format) *(required)*
+- Current Date (any format) *(Required)*
 
     ```tex
         \currentdate{DD Month YYYY}
@@ -89,25 +91,25 @@ There are a lots of custom commands and environments to make this resume templat
         \fi
     ```
 
-- You can also use *fontawesome* icons.  For list of available icons check [here](https://mirror.unpad.ac.id/ctan/fonts/fontawesome/doc/fontawesome.pdf#section.4).
+- You can also use *fontawesome* icons. For the list of available icons, check [here](https://mirror.unpad.ac.id/ctan/fonts/fontawesome/doc/fontawesome.pdf#section.4).
 
     ```tex
         \faicon{icon-name} % you can also use direct icon commands
     ```
 
 ## Requirement(s)
-You must compile this resume with `XeLaTex` or `LuaLaTeX` *(pdfLaTex is incompatible with fontawesome)*. While using Overleaf choose `Compiler` from the menu.
+You must compile this resume with `XeLaTex` or `LuaLaTeX` *(pdfLaTeX is incompatible with fontawesome)*. While using Overleaf, choose `Compiler` from the menu.
 
-This resume template uses following extra packages:-
+This resume template uses following extra packages:  
 - [fontawesome](https://ctan.org/pkg/fontawesome) - For fontawesome icons
 - [xcolor](https://ctan.org/pkg/xcolor) - Custom coloring
 - [fontspec](https://ctan.org/pkg/fontspec) - Custom font selection 
 - [fancyhdr](https://ctan.org/pkg/fancyhdr) - Custom header and footer design
 - [titlesec](https://ctan.org/pkg/titlesec) - Format sections, subsections, chapters
-- [hyperref](https://ctan.org/pkg/hyperref) - Link and pdf options
+- [hyperref](https://ctan.org/pkg/hyperref) - Link and PDF options
 - [geometry](https://ctan.org/pkg/geometry) - Document dimensioning 
 
-In addition to packages, [Roboto](https://fonts.google.com/specimen/Roboto) font family is required. *(Fonts are bundled with the project)*
+In addition, the [Roboto](https://fonts.google.com/specimen/Roboto) font family is required. *(Fonts are bundled with the project)*
 
 
 ## License
@@ -115,6 +117,7 @@ In addition to packages, [Roboto](https://fonts.google.com/specimen/Roboto) font
 Copyright 2024 Avinal Kumar
 This work may be distributed and/or modified under the conditions of the [LaTeX Project Public License](https://www.latex-project.org/lppl/lppl-1-3c/), either version 1.3 of this license any later version.
 
+
 ## Acknowledgements
 
-This resume template is inspired by [Alessandro Rossini's Adaptive CV](https://www.overleaf.com/latex/templates/adaptive-cv/vfngmmqpmmsb) , [Debarghya Das's Deedy CV](https://www.latextemplates.com/template/deedy-resume-cv) and [Font Awesome](https://fontawesome.com/) icons.
+This resume template is inspired by [Alessandro Rossini's Adaptive CV](https://www.overleaf.com/latex/templates/adaptive-cv/vfngmmqpmmsb), [Debarghya Das's Deedy CV](https://www.latextemplates.com/template/deedy-resume-cv), and [Font Awesome](https://fontawesome.com/) icons.

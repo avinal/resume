@@ -1,17 +1,14 @@
 %% comcv.cls
 %% Copyright 2024 Avinal Kumar
-%
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or any later version.
-% The latest version of this license is in
-%   http://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
+
+% This work may be distributed and/or modified under the conditions of the LaTeX Project Public License, 
+% either version 1.3 of this license or any later version. The latest version of this license is in
+% http://www.latex-project.org/lppl.txt and version 1.3 or later is part of all distributions of LaTeX
 % version 2005/12/01 or later.
 
 % class options 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{comcv}[2021/01/21 Compact CV]
+\ProvidesClass{comcv}[2024/10/19 Compact CV]
 
 \newif\ifextended
 \extendedfalse
@@ -25,9 +22,8 @@
 \ProcessOptions\relax
 \LoadClass{article}
 
-
 % required packages - put more packages here
-\RequirePackage[top=0.5cm,left=1cm,right=1cm,bottom=1.2cm]{geometry} % Change Horizontal and Vertical margins
+\RequirePackage[top=0.5cm,left=1cm,right=1cm,bottom=1.2cm]{geometry} % change horizontal and vertical margins
 \RequirePackage{fontawesome} % fontawesome icons
 \RequirePackage[usenames,dvipsnames]{xcolor} % custom colors
 \RequirePackage{fontspec} % custom fonts
@@ -38,6 +34,7 @@
 \RequirePackage{hyperref} % for links and, please keep it as last package, add more packages above it
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{naturalnames}{hyperref}
+
 % define your colors here
 \definecolor{white}{HTML}{FFFFFF} % color white
 \definecolor{gray}{HTML}{555555} % color gray
@@ -97,7 +94,7 @@
     Color=headertext
 ]{Roboto-Medium.ttf}
 
-% define document commands/variables
+% define document commands and variables
 \newcommand*{\fullname}[3]{\def\comcv@firstname{#1}\def\comcv@lastname{#2}\def\comcv@degree{#3}} % full name and degree
 
 \newcommand*{\cvtitle}[1]{\def\comcv@title{#1}} % title of the document
@@ -123,8 +120,6 @@
     \fontsize{14pt}{16pt}\thinheader\bfseries\uppercase 
 }{}{0pt}{}
 
-
-
 \titlespacing{\subsection}{0pt}{0pt}{0pt} % remove space around subsection
 \titleformat{\subsection}[runin]{ % runin option let you put text side of section or subsection
     \fontsize{12pt}{12pt}\mediumheader\bfseries
@@ -147,8 +142,8 @@
 \AtBeginDocument{
     % hyperref options
     \hypersetup{
-        pdfauthor={\comcv@firstname~\comcv@lastname}, % author of the file
-        pdftitle={\comcv@firstname~\comcv@lastname's Résumé}, % title for the generated pdf
+        pdfauthor={\comcv@firstname~\comcv@lastname}, % author of file
+        pdftitle={\comcv@firstname~\comcv@lastname's Résumé}, % title for generated pdf
     }
 
     \def\comcv@email{\faEnvelope~\href{mailto:\comcv@mailid}{\comcv@mailid}}
@@ -196,7 +191,7 @@
     \begin{center}
         % define your header text size, color and format
         \fontsize{35pt}{45pt}\thinheader\comcv@firstname~\regularheader\comcv@lastname
-        \ifx\comcv@degree\empty% do nothing in case of empty degree
+        \ifx\comcv@degree\empty % do nothing in case of empty degree
         \else
             \thinheader,~\comcv@degree
         \fi
